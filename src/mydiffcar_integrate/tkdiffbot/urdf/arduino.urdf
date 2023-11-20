@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="tkdiffbot">
+  <link name="base_footprint">
+    <visual>
+      <geometry>
+          <sphere radius="0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.010215 0.00040151 0.022558"
+        rpy="0 0 0" />
+      <mass
+        value="0.47136" />
+      <inertia
+        ixx="0.00058978"
+        ixy="6.0327E-06"
+        ixz="-9.2669E-08"
+        iyy="0.00054522"
+        iyz="-8.6754E-07"
+        izz="0.0010975" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1.0 1.0 0.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="baselink2basefootprint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.015"/>
+  </joint>
+  <link
+    name="letf_link">
+    <inertial>
+      <origin
+        xyz="5.4391E-11 0.0033316 1.6754E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.057401" />
+      <inertia
+        ixx="2.6249E-05"
+        ixy="-6.9098E-15"
+        ixz="-1.0023E-16"
+        iyy="4.6054E-05"
+        iyz="-2.085E-14"
+        izz="2.6249E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/letf_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.1 0.9 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/letf_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.1018 0.016306"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="letf_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right_link">
+    <inertial>
+      <origin
+        xyz="-6.052E-11 -0.0033316 -1.6407E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.057401" />
+      <inertia
+        ixx="2.6249E-05"
+        ixy="1.3793E-16"
+        ixz="1.2016E-15"
+        iyy="4.6054E-05"
+        iyz="-2.3189E-14"
+        izz="2.6249E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+        rgba="0.1 0.1 0.9 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.1018 0.016306"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="0.0077193 0.0001201 -0.010702"
+        rpy="0 0 0" />
+      <mass
+        value="0.16249" />
+      <inertia
+        ixx="7.2364E-05"
+        ixy="2.8636E-07"
+        ixz="1.5726E-05"
+        iyy="0.0001121"
+        iyz="-4.0147E-07"
+        izz="0.00013003" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.15 0.15 0.15 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="laser"
+    type="fixed">
+    <origin
+      xyz="-0.0013998 -0.0004849 0.11316"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="-0.014813 2.6086E-05 -1.2986E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.018279" />
+      <inertia
+        ixx="3.2476E-06"
+        ixy="-2.1188E-09"
+        ixz="1.3504E-13"
+        iyy="2.4033E-06"
+        iyz="-2.3775E-13"
+        izz="2.3911E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://tkdiffbot/mesh/diff_2w/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camrea"
+    type="fixed">
+    <origin
+      xyz="0.10764 0.00047 0.0843"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
