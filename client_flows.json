@@ -1,0 +1,368 @@
+[
+    {
+        "id": "5ac853bf800229ec",
+        "type": "tab",
+        "label": "客戶端",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ad9431740e2e511c",
+        "type": "ui_button",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "group": "8dfd0eca8c9d471e",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "1桌到餐",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "324dc95ff05b97ab",
+        "type": "debug",
+        "z": "5ac853bf800229ec",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "52ff9d04c0d912fc",
+        "type": "inject",
+        "z": "5ac853bf800229ec",
+        "name": "回到待命點",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "959b5a4e918fffa6",
+        "type": "function",
+        "z": "5ac853bf800229ec",
+        "name": "xyz",
+        "func": "var x=-6.0;\nvar y=0.0;\nvar z=0.0;\nmsg.payload=x+\",\"+y+\",\"+z;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "f3c9442e4b87b56a",
+                "324dc95ff05b97ab"
+            ]
+        ]
+    },
+    {
+        "id": "f3c9442e4b87b56a",
+        "type": "mqtt out",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "topic": "/mqtt_goal_pose",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "2384bcbf052293c1",
+        "x": 690,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "fe09ff320555915b",
+        "type": "ui_button",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "group": "8dfd0eca8c9d471e",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "5桌到餐",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 380,
+        "y": 220,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "f0e8bfe16ec0a3ba",
+        "type": "ui_button",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "group": "8dfd0eca8c9d471e",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "2桌到餐",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 220,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "add11982bccc1ada",
+        "type": "ui_button",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "group": "8dfd0eca8c9d471e",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "3桌到餐",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 260,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "248208952fed36b6",
+        "type": "ui_button",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "group": "8dfd0eca8c9d471e",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "內1桌到餐",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "01ee66c46dd01dc5",
+        "type": "ui_button",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "group": "8dfd0eca8c9d471e",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "4桌到餐",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "987f89b7c049473f",
+        "type": "ui_button",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "group": "8dfd0eca8c9d471e",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "6桌到餐",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "f83c92a29eca7542",
+        "type": "ui_button",
+        "z": "5ac853bf800229ec",
+        "name": "",
+        "group": "8dfd0eca8c9d471e",
+        "order": 8,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "內2桌到餐",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 370,
+        "y": 300,
+        "wires": [
+            [
+                "959b5a4e918fffa6"
+            ]
+        ]
+    },
+    {
+        "id": "8dfd0eca8c9d471e",
+        "type": "ui_group",
+        "name": "收到餐點確認",
+        "tab": "bc63bb7d6b840d1e",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2384bcbf052293c1",
+        "type": "mqtt-broker",
+        "name": "pub2ros2",
+        "broker": "192.168.93.155",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bc63bb7d6b840d1e",
+        "type": "ui_tab",
+        "name": "客戶端回應",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

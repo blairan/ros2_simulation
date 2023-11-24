@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'mqtt_sub = mqtt_test.mqtt_sub:main'
+            'mqtt_sub = mqtt_test.mqtt_sub:main',
+            'mqtt_go_pose = mqtt_test.mqtt2go_pose:main'
         ],
     },
 )

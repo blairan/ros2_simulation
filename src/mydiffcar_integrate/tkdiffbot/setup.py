@@ -16,6 +16,7 @@ setup(
         (os.path.join("share", package_name, "urdf"), glob("urdf/*.urdf")),
         (os.path.join("share", package_name, "urdf"), glob("urdf/*.urdf.xacro")),
         (os.path.join("share", package_name, "mesh/diff_2w"), glob("mesh/diff_2w/*.STL")),
+        (os.path.join("share", package_name, "worlds"), glob("worlds/*.world")),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

@@ -23,7 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'lidar_detect = obstacle_avoidence.lidar_detect:main'
+            'lidar_detect = obstacle_avoidence.lidar_detect:main',
+            'lidar_detect2 = obstacle_avoidence.lidar_detect_v2:main'
         ],
     },
 )
